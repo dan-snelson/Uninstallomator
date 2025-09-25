@@ -71,8 +71,8 @@ if [[ $(/usr/bin/arch) == "arm64" ]]; then
         rosetta2=no
     fi
 fi
-VERSION="1.1.3"
-VERSIONDATE="2025-09-10"
+VERSION="1.1.4"
+VERSIONDATE="2025-09-25"
 
 
 # MARK: Functions
@@ -207,8 +207,9 @@ list_user_homes(){
   | sort -u | grep -E '^/Users/[^/]+' | grep -vE '^/Users/(Shared|Guest)$'
 }
 expand_user_path(){
-  local tpl="$1" home="$2"
-  printf '%s' "${tpl//%USER_HOME%/$home}"
+  local tpl="$1" home="$2" pattern="%USER_HOME%"
+  setopt localoptions sh_glob
+  printf '%s' "${tpl//${pattern}/$home}"
 }
 
 # --- Uninstall engine (runs after label case sets arrays) ---
@@ -387,6 +388,34 @@ valuesfromarguments)
 
 # label descriptions start here
 
+adobeacrobat)
+    app_name="Acrobat"
+    bundle_id="com.adobe.Acrobat.Pro"
+    app_paths=(
+      "/Applications/Adobe Acrobat DC/Adobe Acrobat.app"
+    )
+    pkgs=()
+    files=(
+      "/Library/Application Support/adobe/Acrobat"
+      "/Library/Application Support/adobe/Color/Profiles"
+      "/Library/Application Support/adobe/Acrobat/DC"
+      "/Library/Application Support/adobe/Acrobat DC Helper Frameworks"
+      "/Library/Application Support/adobe/Acrobat DC Helper Frameworks/adobe_zxpsignlib"
+      "/Library/Application Support/adobe/Acrobat DC Helper Frameworks/IMSLib"
+      "/Library/Application Support/adobe/ARMDC/Registered Products"
+    )
+    user_files=(
+      "%USER_HOME%/Library/Application Support/Acrobat"
+      "%USER_HOME%/Library/Preferences/com.adobe.Acrobat.Pro.plist"
+      "%USER_HOME%/Library/Caches/com.adobe.Acrobat.Pro"
+      "%USER_HOME%/Library/Logs/Acrobat"
+    )
+    agents=(
+      "/Library/LaunchAgents/com.adobe.ccxprocess.plist"
+    )
+    daemons=()
+    profiles=()
+;;
 adobeacrobatreader)
     app_name="Acrobat Reader"
     bundle_id="com.adobe.Reader"
