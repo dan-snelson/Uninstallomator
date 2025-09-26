@@ -5,11 +5,12 @@ camostudio
 charles
 dfublasterpro
 googlechrome
-microsoftcompanyportal
+intellijidea
 microsoftedge
 mist
 postman
+screenflow
 slack
 spotify
 suspiciouspackage
-zoomus
+whispertranscription
