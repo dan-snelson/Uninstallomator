@@ -13,7 +13,7 @@ oktaverify)
       "%USER_HOME%/Library/Preferences/com.okta.mobile.plist"
       "%USER_HOME%/Library/Caches/com.okta.mobile"
       "%USER_HOME%/Library/Logs/Okta Verify"
-      "%USER_HOME%/Library/Group Containers/B7F62B65B*"
+      "%USER_HOME%/Library/Group Containers/B7F62B65BN.group.okta.macverify.shared"
     )
     agents=()
     daemons=(
