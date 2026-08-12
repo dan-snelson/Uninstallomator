@@ -9,6 +9,7 @@ intellijidea
 microsoftcompanyportal
 microsoftedge
 mist
+oktaverify
 postman
 screenflow
 slack

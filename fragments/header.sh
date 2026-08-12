@@ -15,7 +15,7 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 # set to 0 for production, 1 for debugging
 # while debugging, affected files will be listed, but
 # also no actual uninstallation will be performed
-DEBUG=1
+DEBUG=0
 
 # notify behavior
 NOTIFY=success
